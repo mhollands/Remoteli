@@ -20,17 +20,17 @@ Furthermore, I found that if the WDT interrupt occured during the input of a new
 The IR commands are stored in the EEPROM of the device so that they are not lost on power off.
 
 ##Pinout
-PA2 - Button 1
-PC4 - Button 2
-PA3 - Button 3
-PB1 - Button 4
-PC1 - Button 5
-PA7 - Button 6
-PA1 - Button 7
-PB3 - Button 8 (This is the button with the bug!)
-PB0 - Button 9
-PC5 - Button 10
-PB2 - Button 11
-PC0 = Infrared LED
-PA6 = Power Supply to the IR receiver
-PA5 = IR Receiver Signal
+PA2 - Button 1;
+PC4 - Button 2;
+PA3 - Button 3;
+PB1 - Button 4;
+PC1 - Button 5;
+PA7 - Button 6;
+PA1 - Button 7;
+PB3 - Button 8 (This is the button with the bug!);
+PB0 - Button 9;
+PC5 - Button 10;
+PB2 - Button 11;
+PC0 - Infrared LED;
+PA6 - Power Supply to the IR receiver;
+PA5 - IR Receiver Signal;
