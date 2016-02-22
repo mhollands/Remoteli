@@ -25,7 +25,7 @@ int main(void)
 	sei(); //enable global interrupts
 	WDTCSR |= (1 << WDIE); //enable watchdog so PB3 works!
 	WDTCSR |= (1 << WDP3) | (0 << WDP2) | (0 << WDP1) | (1 << WDP0); //set watchdog to be slow
-	watchDog = 1;
+	watchDog = 1; 
 	DDRA = 0b01000000; // set all port a as inputs
 	DDRB = 0b00000000; // set all port b as inputs
 	DDRC = 0b00000001; //set all inputs on PORTC except 0 for the LED
@@ -68,7 +68,7 @@ void doRead(char button)
 		while(!isPulseReadCompleted()){} //wait for read to be done
 		uint16_t* pulses = uninitialisePulseRead(); //get pules and uninitialise timers
 		boot_program_4pages(6 + button, pulses);// save pulses
-		fastFlash();	
+		fastFlash(); //indicate that the code has been learnt	
 	}
 }
 
@@ -80,5 +80,10 @@ void doSend(char code)
 	while(!isPulseWriteCompleted()){} //wait for write to be done
 	uninitialisePulseWrite();
 	my_delay(100);
+}
+
+ISR(WDT_vect)
+{
+	WDTCSR |= (1 << WDIE); //put WDT back into interrupt mode instead of reset mode!
 }
 
