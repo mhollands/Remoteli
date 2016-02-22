@@ -1,7 +1,7 @@
 ## Synopsis
 
 This is the code repository for Remoteli, the world's smallest Infrared TV remote. This code runs on the ATtiny1634 processor.
-
+PCB designs can be found at https://workspace.circuitmaker.com/Projects/6F5BD058-E187-437E-A402-97010F0CBC96.
 ## Installation
 
 Downloading the whole project and opening Remoteli_v1.atsln in Atmel Studio should work, however this is untested. Otherwise import the .c files individually.
